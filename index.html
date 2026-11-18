@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curriculum Vitae – Esmeralda Flores Infanates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --oscuro:#0e3b3a;
+  --oscuro-2:#145250;
+  --acento:#f0b44c;
+  --verde:#1d7a6f;
+  --verde-suave:#e3f2ef;
+  --texto:#1f2a2a;
+  --gris:#66757a;
+  --linea:#e4eaea;
+  --fondo:#e9eeee;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Plus Jakarta Sans","Segoe UI",Roboto,Arial,sans-serif;
+  background:var(--fondo);
+  color:var(--texto);
+  line-height:1.55;
+  padding:32px 14px;
+}
+.cv{
+  max-width:1020px;margin:0 auto;background:#fff;
+  display:grid;grid-template-columns:310px 1fr;
+  border-radius:18px;overflow:hidden;
+  box-shadow:0 20px 50px rgba(14,59,58,.18);
+}
+
+/* ---------- Barra lateral ---------- */
+.lateral{
+  background:linear-gradient(170deg,var(--oscuro) 0%,var(--oscuro-2) 100%);
+  color:#e8f3f1;padding:38px 28px;
+}
+.foto-marco{
+  width:164px;height:164px;margin:0 auto 22px;border-radius:50%;
+  padding:5px;background:linear-gradient(135deg,var(--acento),#fff3d6);
+}
+.foto-marco img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:4px solid var(--oscuro);display:block}
+.lateral h2{
+  font-size:.78rem;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--acento);font-weight:700;margin:26px 0 12px;
+  display:flex;align-items:center;gap:10px;
+}
+.lateral h2::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.18)}
+.contacto{list-style:none}
+.contacto li{display:flex;gap:11px;align-items:flex-start;margin-bottom:12px;font-size:.88rem;word-break:break-word}
+.contacto svg{width:17px;height:17px;flex-shrink:0;margin-top:3px;fill:none;stroke:var(--acento);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.contacto a{color:#fff;text-decoration:none}
+.contacto a:hover{text-decoration:underline}
+.dato{margin-bottom:11px}
+.dato span{display:block;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:#9fc4bf}
+.dato strong{font-weight:600;font-size:.92rem;color:#fff}
+.etiquetas{display:flex;flex-wrap:wrap;gap:7px}
+.etiquetas span{
+  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;padding:3px 11px;font-size:.78rem;
+}
+
+/* ---------- Contenido principal ---------- */
+.principal{padding:38px 40px 40px}
+.encabezado{padding-bottom:24px;border-bottom:3px solid var(--acento);margin-bottom:6px}
+.encabezado .etq{font-size:.8rem;letter-spacing:4px;text-transform:uppercase;color:var(--verde);font-weight:700}
+.encabezado h1{font-size:2.35rem;line-height:1.1;font-weight:800;color:var(--oscuro);margin:6px 0 8px}
+.encabezado p{color:var(--gris);font-weight:500}
+
+.bloque{margin-top:30px}
+.bloque > h2{
+  font-size:1.05rem;text-transform:uppercase;letter-spacing:1.6px;color:var(--oscuro);
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;
+}
+.bloque > h2 .num{
+  width:30px;height:30px;border-radius:9px;background:var(--oscuro);color:var(--acento);
+  display:grid;place-items:center;font-size:.85rem;flex-shrink:0;
+}
+
+/* Experiencia (línea de tiempo) */
+.linea-tiempo{position:relative;padding-left:26px}
+.linea-tiempo::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--linea)}
+.exp{position:relative;margin-bottom:22px}
+.exp::before{
+  content:"";position:absolute;left:-26px;top:6px;width:14px;height:14px;border-radius:50%;
+  background:#fff;border:3px solid var(--verde);
+}
+.exp h3{font-size:1rem;color:var(--oscuro)}
+.exp .lugar{font-size:.85rem;color:var(--gris);margin:1px 0 8px}
+.exp .cargo{display:inline-block;background:var(--verde-suave);color:var(--verde);font-weight:700;font-size:.78rem;padding:2px 11px;border-radius:20px;margin-bottom:8px}
+.exp ul{margin-left:18px;font-size:.9rem}
+.exp li{margin-bottom:4px}
+
+/* Formación */
+.formacion{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.tarjeta-f{border:1px solid var(--linea);border-radius:12px;padding:13px 15px;background:#fafcfc}
+.tarjeta-f span{display:block;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;color:var(--gris);font-weight:600}
+.tarjeta-f strong{font-size:.92rem;color:var(--oscuro)}
+.tarjeta-f.ancha{grid-column:1/-1;background:var(--verde-suave);border-color:#bfe0da}
+.tarjeta-f.ancha em{font-style:normal;background:var(--acento);color:#4a3200;font-weight:700;font-size:.72rem;padding:1px 9px;border-radius:20px;margin-left:6px}
+.tarjeta-f p{font-size:.88rem;margin-top:2px}
+
+/* Resumen de horas */
+.horas-resumen{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:6px}
+.horas-resumen div{background:var(--oscuro);color:#fff;border-radius:14px;padding:15px 12px;text-align:center}
+.horas-resumen b{display:block;font-size:1.5rem;color:var(--acento);line-height:1.1}
+.horas-resumen span{font-size:.74rem;color:#bcd8d4;line-height:1.3;display:block;margin-top:3px}
+
+/* Certificaciones */
+.grupo{margin-top:22px}
+.grupo > h3{
+  font-size:.92rem;color:var(--verde);display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding-bottom:7px;border-bottom:2px solid var(--verde-suave);margin-bottom:12px;
+}
+.grupo > h3 .total{background:var(--verde);color:#fff;font-size:.74rem;padding:2px 11px;border-radius:20px;white-space:nowrap}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.cert{border:1px solid var(--linea);border-left:4px solid var(--acento);border-radius:10px;padding:11px 13px;background:#fff;break-inside:avoid}
+.cert .tipo{font-size:.68rem;letter-spacing:.8px;text-transform:uppercase;color:var(--gris);font-weight:600}
+.cert h4{font-size:.86rem;line-height:1.35;color:var(--oscuro);margin:2px 0 5px}
+.cert .h{display:inline-block;font-size:.72rem;font-weight:700;background:var(--verde-suave);color:var(--verde);padding:1px 9px;border-radius:20px}
+.cert p{font-size:.78rem;color:var(--gris);margin-top:5px;line-height:1.45}
+
+/* Matriz de habilidades */
+.matriz{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hab{border-radius:14px;padding:16px 18px;background:#f4f8f8;border:1px solid var(--linea)}
+.hab.completa{grid-column:1/-1;background:var(--oscuro);color:#e8f3f1;border:none}
+.hab h3{font-size:.92rem;color:var(--verde);margin-bottom:8px}
+.hab.completa h3{color:var(--acento)}
+.hab ul{margin-left:17px;font-size:.86rem}
+.hab li{margin-bottom:5px}
+.hab p{font-size:.88rem}
+
+/* Perfil profesional */
+.perfil{font-size:.93rem;color:#33403f;border-left:4px solid var(--acento);background:#fffaf0;padding:14px 18px;border-radius:0 12px 12px 0}
+.perfil p+p{margin-top:8px}
+
+/* En cifras */
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:12px}
+.cifras div{border:1px solid var(--linea);border-radius:14px;padding:14px 10px;text-align:center;background:#fafcfc}
+.cifras b{display:block;font-size:1.55rem;color:var(--verde);line-height:1.1}
+.cifras span{font-size:.74rem;color:var(--gris);display:block;margin-top:3px;line-height:1.3}
+
+/* Distribución de horas */
+.barras{margin-top:16px}
+.barras h3{font-size:.8rem;letter-spacing:1px;text-transform:uppercase;color:var(--gris);margin-bottom:10px}
+.barra{margin-bottom:11px}
+.barra .et{display:flex;justify-content:space-between;gap:10px;font-size:.8rem;font-weight:600;color:var(--oscuro);margin-bottom:4px}
+.barra .pista{height:10px;background:var(--verde-suave);border-radius:10px;overflow:hidden}
+.barra .relleno{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--verde),var(--acento))}
+
+/* Declaración y firma */
+.declaracion{margin-top:34px;padding-top:20px;border-top:2px dashed var(--linea);font-size:.88rem;color:var(--gris)}
+.firma{display:flex;justify-content:flex-end;margin-top:40px}
+.firma div{width:260px;text-align:center;border-top:1.5px solid var(--oscuro);padding-top:6px;font-size:.82rem;color:var(--oscuro);font-weight:600}
+
+/* ---------- Adaptación a móvil ---------- */
+@media (max-width:860px){
+  .cv{grid-template-columns:1fr}
+  .lateral{padding:30px 24px}
+  .principal{padding:30px 22px}
+  .encabezado h1{font-size:1.9rem}
+  .cifras{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  body{padding:0}
+  .cv{border-radius:0}
+  .formacion,.certs,.matriz,.horas-resumen{grid-template-columns:1fr}
+  .firma{justify-content:center}
+  .tarjeta-f.ancha,.hab.completa{grid-column:auto}
+}
+
+/* ---------- Impresión / PDF ---------- */
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff;padding:0}
+  .cv{box-shadow:none;border-radius:0;max-width:100%}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cert,.exp,.hab,.tarjeta-f,.barra,.perfil,.firma{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-globo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
+</svg>
+
+<main class="cv">
+
+  <!-- ===== BARRA LATERAL ===== -->
+  <aside class="lateral">
+    <div class="foto-marco">
+      <img src="data:image/jpeg;base64,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" alt="Foto de Esmeralda Flores Infanates">
+    </div>
+
+    <h2>Contacto</h2>
+    <ul class="contacto">
+      <li><svg><use href="#i-tel"/></svg><span>983 645 374</span></li>
+      <li><svg><use href="#i-mail"/></svg><a href="mailto:esme.flores.43510@gmail.com">esme.flores.43510@gmail.com</a></li>
+      <li><svg><use href="#i-pin"/></svg><span>Jr. Deustua N° 1013 – Puno</span></li>
+      <li><svg><use href="#i-globo"/></svg><span>Español (habla, lee y escribe)</span></li>
+    </ul>
+
+    <h2>Datos personales</h2>
+    <div class="dato"><span>Nombres</span><strong>Esmeralda</strong></div>
+    <div class="dato"><span>Apellidos</span><strong>Flores Infanates</strong></div>
+    <div class="dato"><span>DNI</span><strong>75638460</strong></div>
+    <div class="dato"><span>Fecha de nacimiento</span><strong>28/09/87</strong></div>
+    <div class="dato"><span>Edad</span><strong>39 años</strong></div>
+    <div class="dato"><span>Estado civil</span><strong>Casada</strong></div>
+    <div class="dato"><span>Nacionalidad</span><strong>Peruano</strong></div>
+
+    <h2>Áreas clave</h2>
+    <div class="etiquetas">
+      <span>Soporte técnico</span><span>Redes LAN</span><span>Cableado estructurado</span>
+      <span>Ofimática</span><span>Producción agrícola</span><span>Ganadería altoandina</span>
+      <span>Liderazgo</span>
+    </div>
+
+    <h2>Herramientas y conocimientos</h2>
+    <div class="etiquetas">
+      <span>Microsoft Word</span><span>Microsoft Excel</span><span>Bases de datos</span>
+      <span>Ensamblaje de PC</span><span>Mantenimiento de hardware</span>
+      <span>Seguridad informática básica</span><span>Respaldo de información</span>
+    </div>
+
+    <h2>Idiomas</h2>
+    <div class="dato"><span>Español</span><strong>Habla, lee y escribe</strong></div>
+  </aside>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <section class="principal">
+
+    <header class="encabezado">
+      <div class="etq">Curriculum Vitae</div>
+      <h1>Esmeralda Flores Infanates</h1>
+      <p>Profesional técnico en Producción Agropecuaria · Estudiante de Arquitectura de Plataformas y Servicios de TI</p>
+    </header>
+
+    <!-- 1. Perfil profesional -->
+    <div class="bloque">
+      <h2><span class="num">1</span> Perfil profesional</h2>
+      <div class="perfil">
+        <p>Profesional técnico en Producción Agropecuaria, egresada del I.E.S.T. Público Santa Lucía, con formación complementaria en Tecnologías de Información, redes y computación, que actualmente amplía cursando Arquitectura de Plataformas y Servicios de Tecnologías de Información (APSTI).</p>
+        <p>Cuenta con experiencia práctica en producción agrícola y pecuaria, bioseguridad, transformación de derivados agropecuarios (incluida la fibra de alpaca), control de costos e inventarios, así como en ensamblaje, mantenimiento y soporte de computadoras, redes LAN y cableado estructurado.</p>
+        <p>Se caracteriza por su organización, puntualidad, capacidad de trabajo bajo presión, liderazgo y disposición para el aprendizaje continuo.</p>
+      </div>
+    </div>
+
+    <!-- 2. Experiencia -->
+    <div class="bloque">
+      <h2><span class="num">2</span> Experiencia laboral y prácticas preprofesionales</h2>
+      <div class="linea-tiempo">
+        <article class="exp">
+          <h3>Práctica Modular: Producción Agrícola y Pecuaria (326.4 hrs c/u)</h3>
+          <div class="lugar">I.E.S.T. Público Santa Lucía · Santa Lucía, Puno</div>
+          <span class="cargo">Responsable Técnico en Módulos de Producción Agropecuaria</span>
+          <ul>
+            <li>Ejecución de procesos de preparación de suelos, manejo agronómico de cultivos, fertilización y cosecha tecnificada.</li>
+            <li>Crianza tecnificada, alimentación balanceada, reproducción y manejo integral de ganado en especies altoandinas.</li>
+            <li>Aplicación de buenas prácticas de sanidad, prevención y control fitosanitario.</li>
+          </ul>
+        </article>
+        <article class="exp">
+          <h3>Práctica Modular: Protección, Transformación y Comercialización Agropecuaria</h3>
+          <div class="lugar">I.E.S.T. Público Santa Lucía · Santa Lucía, Puno</div>
+          <span class="cargo">Asistente Técnico en Gestión y Procesamiento</span>
+          <ul>
+            <li>Manejo de bioseguridad, control de plagas y transformación de derivados agropecuarios (incluyendo fibra de alpaca).</li>
+            <li>Control de costos de producción, gestión de inventarios y estrategias de comercialización.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- 2. Formación -->
+    <div class="bloque">
+      <h2><span class="num">3</span> Formación académica</h2>
+      <div class="formacion">
+        <div class="tarjeta-f"><span>Educación primaria</span><strong>I.E.P.P. “Glorioso N° 71009” – Santa Lucía</strong></div>
+        <div class="tarjeta-f"><span>Educación secundaria</span><strong>I.E.P.S. “José Carlos Mariátegui” – Santa Lucía</strong></div>
+        <div class="tarjeta-f">
+          <span>Educación superior</span><strong>I.E.S.T. Público Santa Lucía</strong>
+          <p>Especialidad: Técnico en Producción Agropecuaria</p>
+        </div>
+        <div class="tarjeta-f"><span>Grado</span><strong>Profesional técnico en Agropecuaria</strong><p>Egresado</p></div>
+        <div class="tarjeta-f ancha">
+          <span>Estudios actuales</span>
+          <strong>Arquitectura de Plataformas y Servicios de Tecnologías de Información (APSTI)</strong><em>En curso</em>
+          <p>Institución: I.E.S.T. Público – Santa Lucía</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Certificaciones -->
+    <div class="bloque">
+      <h2><span class="num">4</span> Certificaciones modulares y capacitaciones especializadas</h2>
+
+      <div class="cifras">
+        <div><b>18</b><span>certificaciones y capacitaciones</span></div>
+        <div><b>3,071.2</b><span>horas académicas acumuladas</span></div>
+        <div><b>3</b><span>áreas de formación</span></div>
+        <div><b>2</b><span>prácticas modulares realizadas</span></div>
+      </div>
+
+      <div class="horas-resumen">
+        <div><b>1,084</b><span>horas en Tecnologías de Información, Redes y Computación</span></div>
+        <div><b>1,787.2</b><span>horas en Producción Agropecuaria, Ganadería e Innovación</span></div>
+        <div><b>200</b><span>horas en Desarrollo Personal y Liderazgo</span></div>
+      </div>
+
+      <div class="barras">
+        <h3>Distribución de las horas por área</h3>
+        <div class="barra"><div class="et"><span>Producción Agropecuaria, Ganadería e Innovación</span><span>1,787.2 h · 58.2 %</span></div><div class="pista"><div class="relleno" style="width:58.2%"></div></div></div>
+        <div class="barra"><div class="et"><span>Tecnologías de Información, Redes y Computación</span><span>1,084 h · 35.3 %</span></div><div class="pista"><div class="relleno" style="width:35.3%"></div></div></div>
+        <div class="barra"><div class="et"><span>Desarrollo Personal y Liderazgo</span><span>200 h · 6.5 %</span></div><div class="pista"><div class="relleno" style="width:6.5%"></div></div></div>
+      </div>
+
+      <!-- A -->
+      <div class="grupo">
+        <h3>A. Especialidad en Tecnologías de Información, Redes y Computación <span class="total">1,084 horas</span></h3>
+        <div class="certs">
+          <div class="cert"><div class="tipo">Certificado de Capacitación</div><h4>“Arquitectura de Plataformas y Servicios de Tecnología de la Información”</h4><span class="h">200 horas</span><p>Diseño, implementación y administración de infraestructura tecnológica y servicios TI.</p></div>
+          <div class="cert"><div class="tipo">Certificado de Capacitación</div><h4>“Desarrollo de Sistemas de Información”</h4><span class="h">200 horas</span><p>Análisis, modelado y estructuración lógica de software y gestión de bases de datos.</p></div>
+          <div class="cert"><div class="tipo">Certificado de Capacitación</div><h4>“Mantenimiento, Reparación, Ensamblaje de Computadoras y Administración de Redes”</h4><span class="h">200 horas</span><p>Diagnóstico de hardware, soporte técnico preventivo/correctivo y configuración de redes locales.</p></div>
+          <div class="cert"><div class="tipo">Certificado de Participación / Ponencia</div><h4>“XIX Congreso Regional de Estudiantes de Educación Superior en Computación Informática”</h4><span class="h">200 horas</span><p>Actualización en tendencias tecnológicas, innovación digital y desarrollo informático.</p></div>
+          <div class="cert"><div class="tipo">Especialización (Nivel Avanzado)</div><h4>“Proyectos de Tecnología de la Información, Seguridad Informática y Cableado Estructurado”</h4><span class="h">100 horas</span><p>Normativas de cableado estructurado, protección de datos y ejecución de proyectos TI.</p></div>
+          <div class="cert"><div class="tipo">Especialización (Nivel Fundamental)</div><h4>“Proyectos de Tecnología de la Información, Seguridad Informática y Cableado Estructurado”</h4><span class="h">80 horas</span><p>Implementación de redes físicas, seguridad perimetral básica y gestión de infraestructura.</p></div>
+          <div class="cert"><div class="tipo">Certificado Técnico</div><h4>“Ofimática”</h4><span class="h">80 horas</span><p>Dominio de procesadores de texto, hojas de cálculo, presentaciones y gestión documental.</p></div>
+          <div class="cert"><div class="tipo">Certificado de Capacitación</div><h4>“Radiación (RNI), Importancia de las Antenas de Telefonía Móvil y Uso Responsable de las TIC”</h4><span class="h">24 horas</span><p>Telecomunicaciones, normativas de radiaciones no ionizantes y buenas prácticas digitales.</p></div>
+        </div>
+      </div>
+
+      <!-- B -->
+      <div class="grupo">
+        <h3>B. Especialidad en Producción Agropecuaria, Ganadería e Innovación <span class="total">1,787.2 horas</span></h3>
+        <div class="certs">
+          <div class="cert"><div class="tipo">Certificado Modular I</div><h4>“Producción Agrícola”</h4><span class="h">326.4 horas</span><p>Preparación de suelos, manejo agronómico de cultivos, fertilización y cosecha tecnificada.</p></div>
+          <div class="cert"><div class="tipo">Certificado Modular II</div><h4>“Producción Pecuaria”</h4><span class="h">326.4 horas</span><p>Crianza tecnificada, alimentación balanceada, reproducción y manejo integral de ganado.</p></div>
+          <div class="cert"><div class="tipo">Certificado Modular III</div><h4>“Protección Agropecuaria”</h4><span class="h">163.2 horas</span><p>Prevención y control fitosanitario, bioseguridad, sanidad animal y manejo integrado de plagas.</p></div>
+          <div class="cert"><div class="tipo">Certificado Modular IV</div><h4>“Transformación, Gestión y Comercialización Agropecuaria”</h4><span class="h">163.2 horas</span><p>Procesamiento de derivados agropecuarios, control de calidad, costos de producción y articulación comercial.</p></div>
+          <div class="cert"><div class="tipo">Capacitación Integral</div><h4>“Innovación en Producción, Reproducción, Mejoramiento Genético y Manejo Sostenible en Ganadería, Especies Altoandinas y Acuáticas”</h4><span class="h">200 horas</span><p>Biotecnología reproductiva, selección genética de camélidos/ovinos/vacunos y sostenibilidad altoandina.</p></div>
+          <div class="cert"><div class="tipo">Certificado de Capacitación</div><h4>“Técnicas Avanzadas, Conocimiento y Liderazgo en Agroindustrias”</h4><span class="h">200 horas</span><p>Gestión agroindustrial, liderazgo de equipos productivos y agregación de valor.</p></div>
+          <div class="cert"><div class="tipo">Certificado de Capacitación</div><h4>“Contribución al Futuro Sostenible en Sistemas Agropecuarios”</h4><span class="h">200 horas</span><p>Gestión ambiental, sostenibilidad de recursos hídricos y sistemas productivos resilientes.</p></div>
+          <div class="cert"><div class="tipo">Certificado de Congreso</div><h4>“V Congreso Regional de Estudiantes de Educación Superior Tecnológica de Industrias Alimentarias y Producción Agropecuaria”</h4><span class="h">200 horas</span><p>Innovación alimentaria, tecnología agropecuaria e intercambio técnico regional.</p></div>
+          <div class="cert"><div class="tipo">Certificado Técnico</div><h4>“Producción y Comercialización de la Fibra de Alpaca – Santa Lucía”</h4><span class="h">8 horas</span><p>Categorización, esquila técnica, acopio y comercialización de fibra de alpaca.</p></div>
+        </div>
+      </div>
+
+      <!-- C -->
+      <div class="grupo">
+        <h3>C. Desarrollo Personal y Liderazgo <span class="total">200 horas</span></h3>
+        <div class="certs">
+          <div class="cert"><div class="tipo">Certificado de Capacitación</div><h4>“Habilidades Blandas”</h4><span class="h">200 horas</span><p>Comunicación asertiva, trabajo colaborativo, inteligencia emocional, liderazgo y resolución de conflictos.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Matriz de habilidades -->
+    <div class="bloque">
+      <h2><span class="num">5</span> Matriz de habilidades y competencias profesionales</h2>
+      <div class="matriz">
+        <div class="hab">
+          <h3>Infraestructura TI y Soporte Técnico</h3>
+          <ul>
+            <li>Ensamblaje, diagnóstico, mantenimiento preventivo y correctivo de computadoras de escritorio y portátiles.</li>
+            <li>Instalación, certificación y administración básica de redes LAN y cableado estructurado.</li>
+            <li>Aplicación de protocolos básicos de seguridad informática y respaldo de información.</li>
+          </ul>
+        </div>
+        <div class="hab">
+          <h3>Ofimática y Gestión Digital</h3>
+          <ul>
+            <li>Elaboración de informes técnicos, oficios, cuadros estadísticos y bases de datos en Microsoft Word y Excel.</li>
+            <li>Comprensión del ciclo de vida y desarrollo de sistemas de información orientados a la gestión administrativa.</li>
+          </ul>
+        </div>
+        <div class="hab">
+          <h3>Gestión Técnica Agropecuaria y Proyectos</h3>
+          <ul>
+            <li>Ejecución y supervisión de campañas agrícolas y manejo sanitario en ganadería altoandina.</li>
+            <li>Control de inventarios de insumos, registros productivos y comercialización de productos agropecuarios.</li>
+          </ul>
+        </div>
+        <div class="hab completa">
+          <h3>Competencias Interpersonales</h3>
+          <p>Alta capacidad de organización, puntualidad, trabajo bajo presión, liderazgo comunitario/técnico y disposición para el aprendizaje continuo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Declaración -->
+    <div class="declaracion">
+      <p>Declaro bajo juramento que la información consignada en el presente Curriculum Vitae es veraz y puede ser verificada por la entidad que lo requiera.</p>
+      <div class="firma"><div>Esmeralda Flores Infanates<br>DNI 75638460</div></div>
+    </div>
+
+  </section>
+</main>
+
+</body>
+</html>
